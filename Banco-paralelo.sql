@@ -1,4 +1,4 @@
-CREATE DATABASE hafutech;
+CREATE DATABASE IF NOT EXISTS hafutech;
 
 USE hafutech;
 
