@@ -74,7 +74,7 @@ FOREIGN KEY (status_log_empresa_id)
 REFERENCES Status_log_empresa(id)
 );
 
-CREATE TABLE parametrizacao_notificacao_usuario(
+CREATE TABLE Parametrizacao_notificacao_usuario(
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome_parametro VARCHAR(50),
 parametro VARCHAR(50)
