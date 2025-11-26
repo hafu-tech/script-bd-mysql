@@ -31,7 +31,7 @@ qtd_registro INT,
 fk_status INT,
 CONSTRAINT fk_status_log
 FOREIGN KEY (fk_status)
-REFERENCES Status_log_sistema(id)
+REFERENCES status_log_sistema(id)
 );
 
 CREATE TABLE parametrizacao_notificacao_usuario_copy1(
