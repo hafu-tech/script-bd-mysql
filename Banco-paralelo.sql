@@ -34,15 +34,15 @@ FOREIGN KEY (fk_status)
 REFERENCES Status_log_sistema(id)
 );
 
---CREATE TABLE Parametrizacao_notificacao_usuario_copy1(
---id INT PRIMARY KEY AUTO_INCREMENT,
---ano INT,
---id_municipio INT,
---area VARCHAR(45),
---localizacao VARCHAR(100),
---rede VARCHAR(100),
---valor_inse DOUBLE
---);
+-- CREATE TABLE Parametrizacao_notificacao_usuario_copy1(
+-- id INT PRIMARY KEY AUTO_INCREMENT,
+-- ano INT,
+-- id_municipio INT,
+-- area VARCHAR(45),
+-- localizacao VARCHAR(100),
+-- rede VARCHAR(100),
+-- valor_inse DOUBLE
+-- );
 
 CREATE TABLE Empresa(
 id INT PRIMARY KEY AUTO_INCREMENT,
