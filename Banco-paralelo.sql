@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS Notificacao_slack (
     parametrizacao_notificacao_usuario_id INT,
     status_slack_atividade_id INT,
     status_notificacao_slack_id INT,
-    CONSTRAINT fk_notif_empresa FOREIGN KEY (fk_empresa) REFERENCES empresa(id),
+    CONSTRAINT fk_notif_empresa FOREIGN KEY (fk_empresa) REFERENCES Empresa(id),
     CONSTRAINT fk_notif_param FOREIGN KEY (parametrizacao_notificacao_usuario_id) REFERENCES Parametrizacao_notificacao_usuario(id),
     CONSTRAINT fk_notif_status_atividade FOREIGN KEY (status_slack_atividade_id) REFERENCES Status_slack_atividade(id),
     CONSTRAINT fk_notif_status_slack FOREIGN KEY (status_notificacao_slack_id) REFERENCES Status_notificacao_slack(id)
