@@ -17,6 +17,8 @@ CREATE TABLE IF NOT EXISTS Escola(
     regiao VARCHAR(45)
 );
 
+
+
 CREATE TABLE IF NOT EXISTS Status_log_sistema(
 id INT PRIMARY KEY AUTO_INCREMENT,
 tipo VARCHAR(45),
@@ -51,6 +53,15 @@ codigo_empresa VARCHAR(45),
 email VARCHAR(100),
 senha VARCHAR(45),
 cnpj CHAR(14)
+);
+
+CREATE TABLE IF NOT EXISTS Canal_slack(
+id INT PRIMARY KEY AUTO_INCREMENT,
+webhook TEXT NOT NULL,
+fk_empresa INT,
+CONSTRAINT canal_empresa_slack
+FOREIGN KEY (fk_empresa)
+REFERENCES empresa(id)
 );
 
 CREATE TABLE IF NOT EXISTS Status_log_empresa(
@@ -106,7 +117,7 @@ CONSTRAINT fk_funcionario_tipo FOREIGN KEY (tipo_funcionario) REFERENCES Tipo_fu
 
 
 
-CREATE TABLE IF NOT EXISTS analise (
+CREATE TABLE IF NOT EXISTS Analise (
     id INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(45),
     descricao VARCHAR(250),
@@ -119,15 +130,16 @@ CREATE TABLE IF NOT EXISTS analise (
 );
 
 
-CREATE TABLE IF NOT EXISTS status_slack_atividade (
+CREATE TABLE IF NOT EXISTS Status_slack_atividade (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    estado ENUM('ATIVO','INATIVO'),
+    estado ENUM('ATIVO','INATIVO','AGENDADO'),
+    data_agendamento DATETIME,
     empresa_id INT,
     CONSTRAINT fk_status_atividade_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
 );
     
    
-CREATE TABLE IF NOT EXISTS notificacao_slack (
+CREATE TABLE IF NOT EXISTS Notificacao_slack (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fk_empresa INT,
     mensagem TEXT,
