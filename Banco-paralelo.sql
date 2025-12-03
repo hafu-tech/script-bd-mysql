@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS hafutech;
+CREATE DATABASE hafutech;
 	
 USE hafutech;
 
@@ -61,7 +61,7 @@ webhook TEXT NOT NULL,
 fk_empresa INT,
 CONSTRAINT canal_empresa_slack
 FOREIGN KEY (fk_empresa)
-REFERENCES empresa(id)
+REFERENCES Empresa(id)
 );
 
 CREATE TABLE IF NOT EXISTS Status_log_empresa(
@@ -124,9 +124,9 @@ CREATE TABLE IF NOT EXISTS Analise (
     fk_empresa INT,
     funcionario_id INT,
     funcionario_tipo_funcionario INT,
-    CONSTRAINT fk_analise_empresa FOREIGN KEY (fk_empresa) REFERENCES empresa(id),
-    CONSTRAINT fk_analise_func FOREIGN KEY (funcionario_id) REFERENCES funcionario(id),
-    CONSTRAINT fk_analise_tipo_func FOREIGN KEY (funcionario_tipo_funcionario) REFERENCES tipo_funcionario(id)
+    CONSTRAINT fk_analise_empresa FOREIGN KEY (fk_empresa) REFERENCES Empresa(id),
+    CONSTRAINT fk_analise_func FOREIGN KEY (funcionario_id) REFERENCES Funcionario(id),
+    CONSTRAINT fk_analise_tipo_func FOREIGN KEY (funcionario_tipo_funcionario) REFERENCES Tipo_funcionario(id)
 );
 
 
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS Status_slack_atividade (
     estado ENUM('ATIVO','INATIVO','AGENDADO'),
     data_agendamento DATE,
     empresa_id INT,
-    CONSTRAINT fk_status_atividade_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
+    CONSTRAINT fk_status_atividade_empresa FOREIGN KEY (empresa_id) REFERENCES Empresa(id)
 );
     
    
@@ -148,9 +148,9 @@ CREATE TABLE IF NOT EXISTS Notificacao_slack (
     status_slack_atividade_id INT,
     status_notificacao_slack_id INT,
     CONSTRAINT fk_notif_empresa FOREIGN KEY (fk_empresa) REFERENCES empresa(id),
-    CONSTRAINT fk_notif_param FOREIGN KEY (parametrizacao_notificacao_usuario_id) REFERENCES parametrizacao_notificacao_usuario(id),
-    CONSTRAINT fk_notif_status_atividade FOREIGN KEY (status_slack_atividade_id) REFERENCES status_slack_atividade(id),
-    CONSTRAINT fk_notif_status_slack FOREIGN KEY (status_notificacao_slack_id) REFERENCES status_notificacao_slack(id)
+    CONSTRAINT fk_notif_param FOREIGN KEY (parametrizacao_notificacao_usuario_id) REFERENCES Parametrizacao_notificacao_usuario(id),
+    CONSTRAINT fk_notif_status_atividade FOREIGN KEY (status_slack_atividade_id) REFERENCES Status_slack_atividade(id),
+    CONSTRAINT fk_notif_status_slack FOREIGN KEY (status_notificacao_slack_id) REFERENCES Status_notificacao_slack(id)
 );
     
 		
