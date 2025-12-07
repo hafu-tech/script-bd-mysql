@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS Status_slack_atividade (
     id INT PRIMARY KEY AUTO_INCREMENT,
     estado ENUM('ATIVO','INATIVO','AGENDADO'),
     data_agendamento DATE,
-    empresa_id INT AUTO_INCREMENT,
+    empresa_id INT,
     CONSTRAINT fk_status_atividade_empresa FOREIGN KEY (empresa_id) REFERENCES Empresa(id)
 );
     
