@@ -152,5 +152,7 @@ CREATE TABLE IF NOT EXISTS Notificacao_slack (
     CONSTRAINT fk_notif_status_atividade FOREIGN KEY (status_slack_atividade_id) REFERENCES Status_slack_atividade(id),
     CONSTRAINT fk_notif_status_slack FOREIGN KEY (status_notificacao_slack_id) REFERENCES Status_notificacao_slack(id)
 );
-    
-		
+
+INSERT INTO Tipo_funcionario (nome,descricao) VALUES
+('Analista','Responsável por gerar insights através de uma longa análise dos indicadores da dashboard'),
+('Administrador','Responsável por mediar as propostas de mudanças com os custos financeiros');
