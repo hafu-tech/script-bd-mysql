@@ -157,7 +157,3 @@ INSERT INTO Tipo_funcionario (nome,descricao) VALUES
 ('Analista','Responsável por gerar insights através de uma longa análise dos indicadores da dashboard'),
 ('Administrador','Responsável por mediar as propostas de mudanças com os custos financeiros');
 
-
-INSERT INTO Tipo_funcionario(nome, descricao) VALUES
-	("Analista", "Acessos limitados"),
-    ("Administrador", "Acessos específicos");
