@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Escola(
 
 
 CREATE TABLE IF NOT EXISTS Status_log_sistema(
-id INT PRIMARY KEY AUTO_INCREMENT,
+id INT PRIMARY KEY,
 tipo VARCHAR(45),
 descricao_status TEXT
 );
@@ -156,4 +156,9 @@ CREATE TABLE IF NOT EXISTS Notificacao_slack (
 INSERT INTO Tipo_funcionario (nome,descricao) VALUES
 ('Analista','Responsável por gerar insights através de uma longa análise dos indicadores da dashboard'),
 ('Administrador','Responsável por mediar as propostas de mudanças com os custos financeiros');
+
+INSERT INTO Status_log_sistema VALUES
+(1,'Sucesso','Dados inseridos com sucesso'),
+(2,'Parcial','Dados inseridos, porem com falha em algum processo'),
+(3,'Falha','Dados nao inseridos');
 
